@@ -155,13 +155,8 @@ async def sitemap_lifespan(server: FastMCP) -> AsyncIterator[SitemapContext]:
 
 mcp = FastMCP(
     settings.APP_NAME,
-    version=settings.APP_VERSION,
-    dependencies=settings.DEPENDENCIES,
-    description=settings.APP_DESCRIPTION,
     instructions=settings.APP_INSTRUCTIONS,
     lifespan=sitemap_lifespan,
-    host=settings.HOST,
-    port=settings.PORT,
 )
 
 

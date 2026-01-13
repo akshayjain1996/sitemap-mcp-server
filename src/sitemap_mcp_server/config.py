@@ -16,13 +16,6 @@ class Settings(BaseModel):
     """Settings for the Sitemap MCP server."""
 
     APP_NAME: str = "sitemap-mcp-server"
-    APP_VERSION: str = "0.1.3"
-    APP_DESCRIPTION: str = (
-        "MCP server for fetching, parsing and analyzing sitemaps of websites"
-    )
-    DEPENDENCIES: list[str] = ["mcp[cli]", "pydantic", "ultimate-sitemap-parser"]
-    HOST: str = os.getenv("HOST", "0.0.0.0")
-    PORT: int = int(os.getenv("PORT", "8050"))
     CACHE_MAX_AGE: int = int(os.getenv("CACHE_MAX_AGE", "86400"))
     TRANSPORT: str = os.getenv("TRANSPORT", "sse")
     # LOG_FILE can be set to a writable path, or disabled by setting to "" or None
