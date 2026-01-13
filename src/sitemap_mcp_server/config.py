@@ -17,9 +17,9 @@ class Settings(BaseModel):
 
     APP_NAME: str = "sitemap-mcp-server"
     CACHE_MAX_AGE: int = int(os.getenv("CACHE_MAX_AGE", "86400"))
-    TRANSPORT: str = os.getenv("TRANSPORT", "sse")
-    # LOG_FILE can be set to a writable path, or disabled by setting to "" or None
-    LOG_FILE: str | None = os.getenv("LOG_FILE", "sitemap_server.log") or None
+    TRANSPORT: str = os.getenv("TRANSPORT", "stdio")
+    # LOG_FILE can be set to a writable path. Disabled by default to avoid permission issues.
+    LOG_FILE: str | None = os.getenv("LOG_FILE", "") or None
     LOG_LEVEL: str = os.getenv("LOG_LEVEL", "INFO").upper()
 
     APP_INSTRUCTIONS: str = """This MCP server provides tools for analyzing website sitemaps.
